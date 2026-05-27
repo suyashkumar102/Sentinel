@@ -1,9 +1,8 @@
 # Sentinel
-
+<img width="1774" height="887" alt="Sentinel" src="https://github.com/user-attachments/assets/ff44323b-f113-4ef6-aaac-5136889f2256" />
 <p align="center">
   <img src="./redlog.png" alt="Sentinel Logo" width="360" />
 </p>
-
 <p align="center">
   <strong>Behavioral Trajectory Analysis for Subreddit Moderation</strong><br />
   <em>Detecting escalating patterns before violations occur — server-side, zero-egress, high-performance.</em>
