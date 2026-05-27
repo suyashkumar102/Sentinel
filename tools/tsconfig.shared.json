@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../dist/types/shared",
+    "tsBuildInfoFile": "../dist/types/shared/tsconfig.tsbuildinfo",
+    "rootDir": "../src/shared",
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
+  "include": ["../src/shared/**/*"],
+  "exclude": []
+}

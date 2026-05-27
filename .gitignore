@@ -1,0 +1,21 @@
+node_modules/
+dist/
+public/*.js
+public/*.js.map
+*.log
+.DS_Store
+.env
+.env.local
+.devvit/
+
+# Ignore all image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+
+# Except redlog.png
+!redlog.png
+

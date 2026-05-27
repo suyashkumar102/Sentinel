@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "sentinel",
+  "version": "0.1.0",
+  "description": "Behavioral trajectory analysis for subreddit moderation. Detects escalating patterns before violations occur.",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "scripts": {
+    "build": "node --experimental-strip-types ./tools/build.ts --minify",
+    "build:dev": "node --experimental-strip-types ./tools/build.ts",
+    "watch": "node --experimental-strip-types ./tools/build.ts --watch",
+    "deploy": "npm run build && devvit upload",
+    "dev": "devvit playtest",
+    "login": "devvit login",
+    "launch": "npm run build && devvit upload && devvit publish",
+    "install-app": "devvit install rditinel101_dev",
+    "type-check": "tsc --build",
+    "test": "node --experimental-strip-types --test src/server/__tests__/*.test.ts",
+    "test:coverage": "node --experimental-strip-types --experimental-test-coverage --test src/server/__tests__/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "dependencies": {
+    "@devvit/web": "0.12.24",
+    "devvit": "0.12.24"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "typescript": "6.0.3",
+    "esbuild": "0.28.0"
+  }
+}

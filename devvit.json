@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "rditinel101",
+  "post": {
+    "dir": "public",
+    "entrypoints": {
+      "default": {
+        "inline": true,
+        "entry": "splash.html"
+      },
+      "dashboard": {
+        "entry": "dashboard.html"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.js"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Sentinel — open mod dashboard",
+        "description": "View behavioral trajectory & community health for this subreddit",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/open-dashboard"
+      },
+      {
+        "label": "Sentinel — inspect author",
+        "description": "Show the trajectory for the author of this post",
+        "location": "post",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/inspect-post-author"
+      },
+      {
+        "label": "Sentinel — inspect author",
+        "description": "Show the trajectory for the author of this comment",
+        "location": "comment",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/inspect-comment-author"
+      },
+      {
+        "label": "Sentinel — mark as ban evader",
+        "description": "Save this author's behavioral fingerprint to the evader store",
+        "location": "post",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/mark-evader-from-post"
+      },
+      {
+        "label": "Sentinel — exempt from monitoring",
+        "description": "Add this user to the opt-out list (mods, regulars, etc.)",
+        "location": "post",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/exempt-from-post"
+      },
+      {
+        "label": "Sentinel — recompute scores now",
+        "description": "Force an immediate state recompute across all watched users",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/recompute"
+      }
+    ]
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/app-install",
+    "onAppUpgrade": "/internal/triggers/app-upgrade",
+    "onPostSubmit": "/internal/triggers/post-submit",
+    "onPostCreate": "/internal/triggers/post-create",
+    "onPostDelete": "/internal/triggers/post-delete",
+    "onPostReport": "/internal/triggers/post-report",
+    "onCommentSubmit": "/internal/triggers/comment-submit",
+    "onCommentDelete": "/internal/triggers/comment-delete",
+    "onCommentReport": "/internal/triggers/comment-report",
+    "onModAction": "/internal/triggers/mod-action"
+  },
+  "scheduler": {
+    "tasks": {
+      "community-drift": {
+        "endpoint": "/internal/jobs/community-drift",
+        "cron": "7 3 * * *"
+      },
+      "decay-refresh": {
+        "endpoint": "/internal/jobs/decay-refresh",
+        "cron": "0 * * * *"
+      },
+      "state-recompute": {
+        "endpoint": "/internal/jobs/state-recompute",
+        "cron": "*/15 * * * *"
+      }
+    }
+  },
+  "permissions": {
+    "reddit": {
+      "asUser": [
+        "SUBMIT_POST"
+      ],
+      "enable": true
+    },
+    "http": {
+      "enable": false
+    }
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types ./tools/build.ts --watch",
+    "build": "node --experimental-strip-types ./tools/build.ts --minify"
+  },
+  "dev": {
+    "subreddit": "rditinel101_dev"
+  }
+}

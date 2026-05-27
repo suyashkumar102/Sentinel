@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Sentinel</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="splash">
+    <header class="splash-head">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <span>Sentinel</span>
+        <span class="brand-dot"></span>
+      </div>
+      <div class="row gap">
+        <span class="pill"><span class="reddit-icon">r</span><span id="sub-name">r/loading</span></span>
+        <span class="pill-active">Active</span>
+      </div>
+    </header>
+
+    <section class="splash-body">
+      <div class="splash-left">
+        <h1 class="splash-title">
+          <span class="accent">Sentinel</span> &mdash; guarding<br/>
+          <span id="title-sub">r/&hellip;</span>
+        </h1>
+        <p class="splash-lede">
+          Sentinel continuously builds a six-dimensional behavioral model of every contributor
+          in your subreddit and surfaces escalating users <em>before</em> they violate.
+        </p>
+
+        <div class="feature-card">
+          <div class="feature-icon blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" />
+            </svg>
+          </div>
+          <div class="feature-card-body">
+            <strong>Trajectory, not state.</strong>
+            <span>Temporal decay on a behavioral score — recent matters more than ancient.</span>
+          </div>
+          <svg class="feature-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </div>
+          <div class="feature-card-body">
+            <strong>State machine with hysteresis.</strong>
+            <span>Single bad post can't flip an alert.</span>
+          </div>
+          <svg class="feature-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.05 2a9 9 0 0 1 8 7.94" /><path d="M14.05 6A5 5 0 0 1 18 10" />
+              <path d="M21.5 22a16 16 0 0 1-13.49-7.27 16 16 0 0 1-1.51-3.45L9.78 9.5a2.34 2.34 0 0 0-.13-2.21l-2.4-3.86a2 2 0 0 0-2.42-.84L2 4.5a16.07 16.07 0 0 0 .39 5.43 16 16 0 0 0 11.66 11.66 2 2 0 0 0 2.07-.55Z" />
+            </svg>
+          </div>
+          <div class="feature-card-body">
+            <strong>Ban-evader fingerprinting.</strong>
+            <span>Cosine similarity over rhythm + vocabulary, no IPs.</span>
+          </div>
+          <svg class="feature-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div class="feature-card-body">
+            <strong>Community drift.</strong>
+            <span>30-day health index for the whole subreddit.</span>
+          </div>
+          <svg class="feature-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+
+        <div class="splash-cta-row">
+          <button id="open-dashboard" type="button" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Open mod dashboard
+          </button>
+          <button id="learn-more" type="button" class="btn btn-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            How it works
+          </button>
+        </div>
+
+        <div class="splash-trust">
+          <span class="trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            100% Server-side
+          </span>
+          <span class="trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            No LLMs
+          </span>
+          <span class="trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            No external services
+          </span>
+          <span class="trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/></svg>
+            No PII stored
+          </span>
+          <span class="trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Privacy-first
+          </span>
+        </div>
+
+        <p class="splash-signed">
+          Signed in as <span id="signed-as">u/&hellip;</span>
+          <span style="margin: 0 8px; color: var(--text-dim);">·</span>
+          Not you? <a href="https://www.reddit.com/login" target="_blank" rel="noopener">Sign out</a>
+        </p>
+      </div>
+
+      <div class="radar-stage">
+        <svg viewBox="0 0 480 480" aria-hidden="true">
+          <defs>
+            <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(79,127,255,0.18)"/>
+              <stop offset="60%"  stop-color="rgba(79,127,255,0.03)"/>
+              <stop offset="100%" stop-color="rgba(79,127,255,0)"/>
+            </radialGradient>
+            <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="rgba(79,127,255,0.4)"/>
+              <stop offset="100%" stop-color="rgba(79,127,255,0)"/>
+            </linearGradient>
+            <linearGradient id="shieldFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="#4f7fff" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#4f7fff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="240" cy="240" r="220" fill="url(#rg)" />
+          <circle cx="240" cy="240" r="80"  fill="none" stroke="rgba(79,127,255,0.18)" stroke-width="1"/>
+          <circle cx="240" cy="240" r="140" fill="none" stroke="rgba(79,127,255,0.15)" stroke-width="1"/>
+          <circle cx="240" cy="240" r="200" fill="none" stroke="rgba(79,127,255,0.12)" stroke-width="1"/>
+          <circle cx="240" cy="240" r="260" fill="none" stroke="rgba(79,127,255,0.08)" stroke-width="1"/>
+          <line x1="240" y1="40"  x2="240" y2="440" stroke="rgba(79,127,255,0.05)"/>
+          <line x1="40"  y1="240" x2="440" y2="240" stroke="rgba(79,127,255,0.05)"/>
+
+          <g class="radar-sweep">
+            <path d="M240 240 L 240 40 A 200 200 0 0 1 410 145 Z" fill="url(#sweep)" />
+          </g>
+
+          <g class="radar-blip"><circle cx="320" cy="120" r="3" fill="#4f7fff"/></g>
+          <g class="radar-blip"><circle cx="100" cy="200" r="2.5" fill="#4f7fff"/></g>
+          <g class="radar-blip"><circle cx="360" cy="320" r="3" fill="#4f7fff"/></g>
+          <g class="radar-blip"><circle cx="160" cy="360" r="2" fill="#4f7fff"/></g>
+          <g class="radar-blip"><circle cx="400" cy="240" r="2.5" fill="#4f7fff"/></g>
+
+          <path d="M240 150 L 310 180 L 310 240 C 310 280 280 310 240 330 C 200 310 170 280 170 240 L 170 180 Z"
+                fill="url(#shieldFill)" stroke="#4f7fff" stroke-width="2" stroke-linejoin="round"/>
+          <image href="./redlog.png" x="105" y="140" width="270" height="180" />
+        </svg>
+      </div>
+    </section>
+
+    <script type="module" src="./splash.js"></script>
+  </body>
+</html>
